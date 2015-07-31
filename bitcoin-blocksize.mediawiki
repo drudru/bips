@@ -83,7 +83,8 @@ https://en.wikipedia.org/wiki/Flag_day_(computing)
 The strategy picked is the simplest, effective technical solution. It is time tested. It has also been proposed by quite a few already.
 
 == Why the **manual** geometric strategy?==
-I think an automated doubling or automated increase is too big of a pill to swallow right now.
+I think an automated doubling or automated increase is too big of a pill to swallow right now. Getting people to agree 
+on a single change is much easier than openning the door to uncertainty.
 
 == Why such a small change? ==
 
