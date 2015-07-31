@@ -1,0 +1,61 @@
+
+The Bitcoin community is having a healthy debate around blocksize.
+
+Here is a proposed solution to the blocksize debate:
+
+* Use 
+I propose a simple set of steps to resolve the issue.
+
+I recommend the old technique of geometric expansion.
+https://en.wikipedia.org/wiki/Dynamic_array#Geometric_expansion_and_amortized_cost
+In plain english, it means doubling the blocksize at each agreed upon block number.
+
+In order to get agreement for one of these events, I recommend a public document signing. I believe that most major parties want to cooperate towards an improved network.
+
+All major parties create a simple utf-8 text file indicating that they agree to set the blocksize to X following block number Y. This should be unambiguous and only take a sentence or two. Then each party has a representative listed in the document. Each party signs the document. The hash of the document is then posted to the blockchain. 
+
+The actual specifics may vary, (ie. someone may have a much smarter way of achieving the above). However, the end result is that those parties have publicly stated that they agree to the change.
+
+This public statement is not enforcable, but I believe this is all that is needed to get *all* parties to implement the change. Those that are not in the agreement will see that they risk their incenetives for participating in the network.
+
+
+How would this play out?
+
+A mailing list or forum is used to coordinate the change. The only variable is the block number. I recommend October 1st, 2015.
+
+On the day of the change, people will probably avoid making large transactions.
+
+Once the dust settles, we let the change bake in for 2-3 months. Once everyone is in agreement that this was a good change, the same parties may agree to another change. This time doubling from 2 megs to 4 megs on a date 4-6 months after the previous event.
+
+
+
+Reasoning
+
+Regardless of the handwaving about decentralization, the Bitcoin network requires some coordination and cooperation in order to respond to threats or holes in the design.  This is an old problem. The internet itself has had similar issues and events.
+
+The most similar type of issues were internet standards issues. They were called 'flag days' when the entire internet had to move to a new protocol. This was achieved with public coordination and cooperation by the primary or large entities on the internet.
+
+Why the manual geometric strategy?
+The strategy picked is simple and effective. A conditional is placed in the code that returns the blocksize given a block number. I think an automated doubling or automated increase is too big of a pill to swallow.
+
+Why such a small change?  "Baby steps"
+Moving from 1 meg to 2 megs might be a much easier pill to swallow for many people. The agreement on this might be very quick and have a clear majority (over 95%). 
+If instead we tried to achieve some optimal consensus on a size, the process might take a long time. The longer it takes, the more fragile the consensus process becomes.
+
+Just implementing a simple change will help the network, right now vs. months in the future. 
+
+This buys us more time, right now, for things like sidechains or the lightning network, etc.
+
+After the change, those proposing an increase will have more evidence that the negative effects are not worth reasoning about.
+
+Why the signing?
+I like that the Bitcoin network is not run by an organization. However, a representative system does seem to have emerged.
+
+How to do the signing?
+The current bitcoin software providers are public figures and have keys. The large mining pools can sign with their private keys.
+Maybe Blockname:
+https://github.com/telehash/blockname
+http://blog.printf.net/articles/2015/05/29/announcing-gittorrent-a-decentralized-github/ mentions Blockname too.
+
+I would appreciate and will reply to any feedback about this in the coming days.
+
