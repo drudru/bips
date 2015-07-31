@@ -11,7 +11,8 @@ For the technical solution, I recommend the simplest technique of geometric expa
 https://en.wikipedia.org/wiki/Dynamic_array#Geometric_expansion_and_amortized_cost
 
 In plain english, it means doubling the blocksize at each agreed upon block number / height.
-For the first agreement this means going from 1MB to 2MB. I also strongly encourage that a block
+For the first agreement this means going from 1MB to 2MB. There would have to be an agreement
+for any of these changes. I also strongly encourage that a block
 height is used. Dealing with time on a computer in a distributed system just adds risk.
 
 <pre>
@@ -29,19 +30,26 @@ uint32_t GetMaxBlockSize(int64_t nBlockHeight) {
 
 == Real World Consensus ==
 
-The goal is to just get to consensus quickly for some forward progress. I recommend a public document signing.
-I believe that most major parties want to cooperate towards an improved network.
+In order for this change to occur, there has to be an agreement by the majority of parties that provide
+infrastructure for the bitcoin network. Unfortunately, there is not a technical solution to getting this
+kind of consensus. I believe that one of the goals of this debate is to get to consensus quickly. We
+need some forward progress which will give the network more time and data.
+
+I recommend a public document signing by the majority of parties. I think this will work
+because I believe that most major parties want to cooperate towards an improved network.
 I also do not believe that an automated voting scheme will be agreed upon at this time.
 
 All parties get together on a moderated mailing list or forum. A single utf-8 text file or BIP is proposed. 
 It concisely states that all parties agree to a blocksize of X. They all also agree to do this for block Y on the
 testnet and Z in production. Again, the document should be as unambiguous and simple as possible.
 
-The representatives for the major bitcoin software packages and a majority of miners would each have a representative listed in the document. Each party signs the document. The hash of the document is then posted to the blockchain. 
+The representatives for the major bitcoin software packages and major miners would each have a representative listed in the document. Each organization signs the document. The hash of the document is then posted to the blockchain. 
 
-In plain english... get on a moderated mailing list/forum. Agree to the simplest and smallest change that will get majority acceptance. Create a simple doc. Get the signers to agree. Orchestrate a signing. Post to the blockchain.
+In plain english... anybody who wants a block increase to 2MB gets on a moderated mailing list/forum. If the group
+represents a majority of infrastructure, then they move to the next step. The group agrees to the block heights for 
+the change. One of the members proposes a simple doc. The group modifies the document to get internet majority agreement. Now the group orchestrates a signing. Post to result the blockchain.
 
-This public document is not enforcable. However, I believe that public support for a small simple change is all that is needed to get *all* parties to implement. Those that are not in the agreement will quickly realize that they risk their incenetives for participating in the network.
+This public document is not enforcable. However, I believe that public support for a small simple change is all that is needed to get *all* parties to implement. Those that are not in the agreement will quickly realize that they risk their incentives for participating in the network.
 
 ==How would this play out?==
 
@@ -64,13 +72,15 @@ At some point, a proposal is put forth for another doubling from 2MB to 4MB. If 
 
 === Flag Days ===
 
-Regardless of the handwaving about decentralization, the Bitcoin network requires coordination and cooperation in order to respond to threats or holes in the design. This is an old problem. The internet itself has had similar issues and events. They were called 'flag days' when the entire internet had to move to a new protocol. This was achieved with public coordination and cooperation by the primary or large entities on the internet. If it works for them, it should work here too.
+Regardless of the handwaving about extreme trustless decentralization, the Bitcoin network requires coordination and cooperation in order to respond to threats or holes in the design. Also, most of the Bitcoin network infrastructure is represented by
+a relative handful of code bases.
+
+It turns out that this is an old problem with some old solutions. The internet itself has and continues to have similar issues and events. They were called 'flag days' when the entire internet had to move to a new protocol. This was achieved with public coordination and cooperation by the primary or large entities on the internet. If it works for them, it should work here too.
 
 https://en.wikipedia.org/wiki/Flag_day_(computing)
 
-
 == Why the geometric strategy?==
-The strategy picked is the simplest, effective technical solution. It is time tested.
+The strategy picked is the simplest, effective technical solution. It is time tested. It has also been proposed by quite a few already.
 
 == Why the **manual** geometric strategy?==
 I think an automated doubling or automated increase is too big of a pill to swallow right now.
@@ -86,8 +96,11 @@ If instead we tried to achieve some optimal consensus on a size, the process mig
 Just implementing a simple change will help the network, right now vs. months in the future. This buys us more time for things like sidechains or the lightning network, etc. It also allows us to collect data for arguments in favor of or against further changes like this.
 
 
+== Why the mailing list/forum vs. blockchain voting ==
+I think that would be a great thing to figure out in the future, but I don't believe it is feasible now. A carefully moderated mailing list/forum will get consensus by all the necessary parties much faster.
 
-== Thanks for reading ==
+
+=== Thanks for reading ===
 
 I would appreciate and will reply to any feedback about this in the coming days.
 
