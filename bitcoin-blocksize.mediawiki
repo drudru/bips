@@ -1,32 +1,52 @@
 
-The Bitcoin community is having a healthy debate around blocksize.
+The Bitcoin community is having a healthy debate around blocksize. This requires a hard-fork.
 
 Here is a proposed solution to the blocksize debate:
 
-* Use 
-I propose a simple set of steps to resolve the issue.
+* Have a simple strategy for the technical solution
+* Have a simple strategy for consensus around the proposal
 
-I recommend the old technique of geometric expansion.
+== Technical Solution ==
+For the technical solution, I recommend the simplest technique of geometric expansion.
 https://en.wikipedia.org/wiki/Dynamic_array#Geometric_expansion_and_amortized_cost
+
 In plain english, it means doubling the blocksize at each agreed upon block number.
-
-In order to get agreement for one of these events, I recommend a public document signing. I believe that most major parties want to cooperate towards an improved network.
-
-All major parties create a simple utf-8 text file indicating that they agree to set the blocksize to X following block number Y. This should be unambiguous and only take a sentence or two. Then each party has a representative listed in the document. Each party signs the document. The hash of the document is then posted to the blockchain. 
-
-The actual specifics may vary, (ie. someone may have a much smarter way of achieving the above). However, the end result is that those parties have publicly stated that they agree to the change.
-
-This public statement is not enforcable, but I believe this is all that is needed to get *all* parties to implement the change. Those that are not in the agreement will see that they risk their incenetives for participating in the network.
+For the first agreement this means going from 1MB to 2MB. The code would literally use a
+timestamp or block number.
 
 
-How would this play out?
+== Real World Consensus ==
 
-A mailing list or forum is used to coordinate the change. The only variable is the block number. I recommend October 1st, 2015.
+For the non-technical aspect, we need to get to a consensus quickly for one of these
+events, I recommend a public document signing. I believe that most major parties want
+to cooperate towards an improved network. I also believe that no automated scheme will be agreed 
+upon at this time.
 
-On the day of the change, people will probably avoid making large transactions.
+All major parties create a simple utf-8 text file indicating that they agree to set the blocksize to X following block number Y. This could be an extremely concise document or BIP proposal or just a document. This should be unambiguous and only take a sentence or two. Each party has a representative listed in the document. Each party signs the document. The hash of the document is then posted to the blockchain. 
 
-Once the dust settles, we let the change bake in for 2-3 months. Once everyone is in agreement that this was a good change, the same parties may agree to another change. This time doubling from 2 megs to 4 megs on a date 4-6 months after the previous event.
+The actual specifics of the signing may vary (ie. someone may have a much smarter way of achieving the above), but the ideal would be to quickly achive a document that shows public support by the major entities.
 
+Who are the major entities? The representatives for the major bitcoin software packages and a majority of miners.
+
+In plain english... get on a moderated mailing list/forume. Create a simple doc. Get the signers. Orchestrate a signing.
+
+This public document is not enforcable, but I believe this is all that is needed to get *all* parties to implement the change. Those that are not in the agreement will see that they risk their incenetives for participating in the network.
+
+
+==How would this play out?==
+
+A mailing list or forum is used to coordinate the change. The only variable is the block number and timestamp.
+I recommend October 1st, 2015. However, jgarzik's proposal of November is probably fine too.
+
+The document gets signed and posted to the blockchain.
+
+The argument is now over, consensus is achieved. Everybody, starts working on the implementation.
+
+On the day of the change, people will probably avoid making large transactions. People will create blocks that hit the new limit. After several hours, the dust will settle.
+
+Congratulations, we made forward progress.
+
+At some point, a proposal is put forth for another doubling from 2MB to 4MB. If the majority of parties agree that this is needed, then they only need to coordinate on the time for the change.
 
 
 Reasoning
