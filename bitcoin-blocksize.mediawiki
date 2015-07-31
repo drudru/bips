@@ -103,5 +103,6 @@ I think that would be a great thing to figure out in the future, but I don't bel
 
 === Thanks for reading ===
 
-I would appreciate and will reply to any feedback about this in the coming days.
+I would appreciate and will reply to any feedback about this in the coming days. Just open a github issue
+or contact me via email at drudru@gmail.com.
 
