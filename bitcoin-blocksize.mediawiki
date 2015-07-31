@@ -10,28 +10,39 @@ Here is a proposed solution to the blocksize debate:
 For the technical solution, I recommend the simplest technique of geometric expansion.
 https://en.wikipedia.org/wiki/Dynamic_array#Geometric_expansion_and_amortized_cost
 
-In plain english, it means doubling the blocksize at each agreed upon block number.
-For the first agreement this means going from 1MB to 2MB. The code would literally use a
-timestamp or block number.
+In plain english, it means doubling the blocksize at each agreed upon block number / height.
+For the first agreement this means going from 1MB to 2MB. I also strongly encourage that a block
+height is used. Dealing with time on a computer in a distributed system just adds risk.
 
+<pre>
+uint32_t GetMaxBlockSize(int64_t nBlockHeight) {
+    static const uint32_t initial = 1000000;
+
+    // Approximately Oct. 1, 2015    
+    if (nBlockHeight >= 376836) {
+      return initial * 2;
+    }
+    
+    return inital;
+}
+</pre>
 
 == Real World Consensus ==
 
 For the non-technical aspect, we need to get to a consensus quickly for one of these
 events, I recommend a public document signing. I believe that most major parties want
-to cooperate towards an improved network. I also believe that no automated scheme will be agreed 
+to cooperate towards an improved network. I also do not believe that an automated voting scheme will be agreed 
 upon at this time.
 
-All major parties create a simple utf-8 text file indicating that they agree to set the blocksize to X following block number Y. This could be an extremely concise document or BIP proposal or just a document. This should be unambiguous and only take a sentence or two. Each party has a representative listed in the document. Each party signs the document. The hash of the document is then posted to the blockchain. 
+All parties get together on a moderated mailing list or forum. A single utf-8 text file or BIP is proposed. 
+It concisely states that all parties agree to a blocksize of X. They all also agree to do this for block Y on the
+testnet and Z in production. Again, the document should be as unambiguous and simple as possible.
 
-The actual specifics of the signing may vary (ie. someone may have a much smarter way of achieving the above), but the ideal would be to quickly achive a document that shows public support by the major entities.
+The representatives for the major bitcoin software packages and a majority of miners would each have a representative listed in the document. Each party signs the document. The hash of the document is then posted to the blockchain. 
 
-Who are the major entities? The representatives for the major bitcoin software packages and a majority of miners.
+In plain english... get on a moderated mailing list/forum. Agree to the simplest and smallest change that will get majority acceptance. Create a simple doc. Get the signers to agree. Orchestrate a signing. Post to the blockchain.
 
-In plain english... get on a moderated mailing list/forume. Create a simple doc. Get the signers. Orchestrate a signing.
-
-This public document is not enforcable, but I believe this is all that is needed to get *all* parties to implement the change. Those that are not in the agreement will see that they risk their incenetives for participating in the network.
-
+This public document is not enforcable. However, I believe that public support for a small simple change is all that is needed to get *all* parties to implement. Those that are not in the agreement will quickly realize that they risk their incenetives for participating in the network.
 
 ==How would this play out?==
 
@@ -40,13 +51,14 @@ I recommend October 1st, 2015. However, jgarzik's proposal of November is probab
 
 The document gets signed and posted to the blockchain.
 
-The argument is now over, consensus is achieved. Everybody, starts working on the implementation.
+The argument is now over, consensus is achieved. Everybody, starts working on the implementation. There is ample time, so the 
+code gets deployed.
 
-On the day of the change, people will probably avoid making large transactions. People will create blocks that hit the new limit. After several hours, the dust will settle.
+On the day of the change, people will probably avoid making large transactions. Some people should create blocks that hit the new limit. After several hours, the dust will settle.
 
 Congratulations, we made forward progress.
 
-At some point, a proposal is put forth for another doubling from 2MB to 4MB. If the majority of parties agree that this is needed, then they only need to coordinate on the time for the change.
+At some point, a proposal is put forth for another doubling from 2MB to 4MB. If the majority of parties agree that this is needed, then they start over. Again, they only need to coordinate on the time for the change. All of the other variables are decided.
 
 
 Reasoning
